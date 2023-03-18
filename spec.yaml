@@ -1,0 +1,1077 @@
+openapi: 3.0.1
+info:
+  version: 0.2.1
+  title: Content translation service
+  description: Content translation service for translating mediawiki pages between languages.
+  termsOfService: https://wikimediafoundation.org/wiki/Terms_of_Use
+  contact:
+    name: the Wikimedia Language team
+    url: https://www.mediawiki.org/wiki/Wikimedia_Language_engineering
+  license:
+    name: GPL-2.0-or-later
+    url: http://opensource.org/licenses/GPL-2.0
+x-default-params:
+  domain: en.wikipedia.org
+
+paths:
+  # from routes/root.js
+  /robots.txt:
+    get:
+      tags:
+        - Root
+        - Robots
+      description: Gets robots.txt
+      responses:
+        200:
+          description: Success
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+      x-amples:
+        - title: robots.txt check
+          request: {}
+          response:
+            status: 200
+  /:
+    get:
+      tags:
+        - Root
+      description: The root service end-point
+      responses:
+        200:
+          description: Success
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+      x-amples:
+        - title: root with no query params
+          request: {}
+          response:
+            status: 302
+        - title: spec from root
+          request:
+            query:
+              spec: true
+          response:
+            status: 200
+        - title: doc from root
+          request:
+            query:
+              doc: true
+          response:
+            status: 302
+        - title: root with wrong query param
+          request:
+            query:
+              fooo: true
+          response:
+            status: 302
+  # from routes/v1.js
+  /v1/page/{language}/{title}:
+    get:
+      tags:
+        - Page content
+      description: Fetches segmented mediawiki page
+      parameters:
+        - $ref: "#/components/parameters/language"
+        - $ref: "#/components/parameters/title"
+      responses:
+        200:
+          description: Page fetched successfully
+          content:
+            application/json:
+              schema:
+                type: string
+        404:
+          description: Page not found
+          content: {}
+      x-amples:
+        - title: Fetch enwiki protected page
+          request:
+            params:
+              language: en
+              title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
+          response:
+            status: 200
+            headers:
+              content-type: application/json
+  /v1/page/{language}/{title}/{revision}:
+    get:
+      tags:
+        - Page content
+      description: Fetches segmented mediawiki page
+      parameters:
+        - $ref: "#/components/parameters/language"
+        - $ref: "#/components/parameters/title"
+        - $ref: "#/components/parameters/revision"
+      responses:
+        200:
+          description: Page fetched successfully
+          content:
+            application/json:
+              schema:
+                type: string
+        404:
+          description: Page not found
+          content: {}
+      x-amples:
+        - title: Fetch enwiki protected page
+          request:
+            params:
+              language: en
+              title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
+          response:
+            status: 200
+            headers:
+              content-type: application/json
+  /v1/dictionary/{word}/{from}/{to}:
+    get:
+      tags:
+        - Dictionary
+      description: Fetches the dictionary meaning of a word.
+      parameters:
+        - $ref: "#/components/parameters/word"
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+      responses:
+        200:
+          description: Dictionary meaning of a word fetched successfully
+          content:
+            application/json:
+              schema:
+                type: string
+        404:
+          description: Word not found in the dictionary
+          content: {}
+      x-amples:
+        - title: Fetch dictionary meaning with a given provider
+          request:
+            params:
+              word: water
+              from: en
+              to: es
+              provider: JsonDict
+          response:
+            status: 200
+            body:
+              source: water
+              translations:
+                - phrase: /.+/
+                  sources:
+                    - fd-eng-spa
+            headers:
+              content-type: application/json
+        - title: Fetch dictionary meaning without specifying a provider
+          request:
+            params:
+              word: water
+              from: en
+              to: es
+          response:
+            status: 200
+            body:
+              source: water
+              translations:
+                - phrase: /.+/
+                  sources:
+                    - fd-eng-spa
+            headers:
+              content-type: application/json
+  /v1/dictionary/{word}/{from}/{to}/{provider}:
+    get:
+      tags:
+        - Dictionary
+      description: Fetches the dictionary meaning of a word.
+      parameters:
+        - $ref: "#/components/parameters/word"
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+        - $ref: "#/components/parameters/dictprovider"
+      responses:
+        200:
+          description: Dictionary meaning of a word fetched successfully
+          content:
+            application/json:
+              schema:
+                type: string
+        404:
+          description: Word not found in the dictionary
+          content: {}
+      x-amples:
+        - title: Fetch dictionary meaning with a given provider
+          request:
+            params:
+              word: water
+              from: en
+              to: es
+              provider: JsonDict
+          response:
+            status: 200
+            body:
+              source: water
+              translations:
+                - phrase: /.+/
+                  sources:
+                    - fd-eng-spa
+            headers:
+              content-type: application/json
+        - title: Fetch dictionary meaning without specifying a provider
+          request:
+            params:
+              word: water
+              from: en
+              to: es
+          response:
+            status: 200
+            body:
+              source: water
+              translations:
+                - phrase: /.+/
+                  sources:
+                    - fd-eng-spa
+            headers:
+              content-type: application/json
+  /v1/mt/{from}/{to}:
+    post:
+      tags:
+        - Machine translation
+      description: Fetches the machine translation. Some providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
+      parameters:
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - html
+              properties:
+                html:
+                  type: string
+                  description: The HTML content to translate
+                  x-textarea: true
+        required: true
+      responses:
+        200:
+          description: Machine translation fetched successfully
+          content:
+            application/json:
+              schema:
+                type: string
+        500:
+          description: Internal error
+          content: {}
+      x-amples:
+        - title: Machine translate an HTML fragment using TestClient.
+          request:
+            params:
+              from: en
+              to: qqq
+            body:
+              html: <p><a href='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a href='Atomic number'>atomic number</a> 8.</p>
+          response:
+            status: 200
+            body:
+              contents: /.+/
+            headers:
+              content-type: application/json
+  /v1/mt/{from}/{to}/{provider}:
+    post:
+      tags:
+        - Machine translation
+      description: Fetches the machine translation. Some providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
+      parameters:
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+        - $ref: "#/components/parameters/mtprovider"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - html
+              properties:
+                html:
+                  type: string
+                  description: The HTML content to translate
+                  x-textarea: true
+        required: true
+      responses:
+        200:
+          description: Machine translation fetched successfully
+          content:
+            application/json:
+              schema:
+                type: string
+        500:
+          description: Internal error
+          content: {}
+      x-amples:
+        - title: Machine translate an HTML fragment using TestClient.
+          request:
+            params:
+              from: en
+              to: qqq
+              provider: TestClient
+            body:
+              html: <p><a href='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a href='Atomic number'>atomic number</a> 8.</p>
+          response:
+            status: 200
+            body:
+              contents: /.+/
+            headers:
+              content-type: application/json
+  /v1/list/pair/{from}/{to}:
+    get:
+      tags:
+        - Tools
+      description: Lists the tools for a given language pair
+      parameters:
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+      responses:
+        200:
+          description: Lists the tools for a given language pair fetched successfully
+          content:
+            application/json:
+              schema:
+                type: string
+        500:
+          description: Internal error
+          content: {}
+      x-amples:
+        - title: Get the tools between two language pairs
+          request:
+            params:
+              from: en
+              to: es
+          response:
+            status: 200
+            headers:
+              content-type: application/json
+  /v1/list/languagepairs:
+    get:
+      tags:
+        - Languages
+        - Service information
+      description: Lists the language pairs supported by the server
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+      x-amples:
+        - title: Get all the language pairs
+          response:
+            status: 200
+            headers:
+              content-type: application/json
+  /v1/list/{tool}:
+    get:
+      tags:
+        - Tools
+        - Service information
+      description: Lists all language pairs that tool supports.
+      parameters:
+        - $ref: "#/components/parameters/tool"
+      responses:
+        200:
+          description: List of all language pairs
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+      x-amples:
+        - title: Get the MT tool between two language pairs
+          request:
+            params:
+              tool: mt
+          response:
+            status: 200
+            headers:
+              content-type: application/json
+
+  /v1/list/{tool}/{from}/{to}:
+    get:
+      tags:
+        - Tools
+        - Service information
+      description: Lists the providers for the tool in that language pair.
+      parameters:
+        - $ref: "#/components/parameters/tool"
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+      responses:
+        200:
+          description: List of all language pairs
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+      x-amples:
+        - title: Get the MT tool between two language pairs
+          request:
+            params:
+              from: en
+              to: es
+              tool: mt
+          response:
+            status: 200
+            headers:
+              content-type: application/json
+  # from routes/v2.js
+  /v2/page/{sourcelanguage}/{targetlanguage}/{title}:
+    get:
+      tags:
+        - Page content
+      description: Fetches segmented mediawiki page
+      parameters:
+        - $ref: "#/components/parameters/sourcelanguage"
+        - $ref: "#/components/parameters/targetlanguage"
+        - $ref: "#/components/parameters/title"
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+
+      x-amples:
+        - title: Translate enwiki protected page
+          request:
+            params:
+              sourcelanguage: en
+              targetlanguage: es
+              title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
+          response:
+            status: 200
+            headers:
+              content-type: application/json
+  /v2/page/{sourcelanguage}/{targetlanguage}/{title}/{revision}:
+    get:
+      tags:
+        - Page content
+      description: Fetches segmented mediawiki page
+      parameters:
+        - $ref: "#/components/parameters/sourcelanguage"
+        - $ref: "#/components/parameters/targetlanguage"
+        - $ref: "#/components/parameters/title"
+        - $ref: "#/components/parameters/revision"
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+
+      x-amples:
+        - title: Translate enwiki protected page
+          request:
+            params:
+              sourcelanguage: en
+              targetlanguage: es
+              title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
+          response:
+            status: 200
+            headers:
+              content-type: application/json
+  /v2/translate/{from}/{to}:
+    post:
+      tags:
+        - Machine translation
+      description: Translate the given content from source language to target language using default MT provider. Also adapt the content for the target language wiki. Some machine translation providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
+      parameters:
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - html
+              properties:
+                html:
+                  type: string
+                  description: The HTML content to translate
+                  x-textarea: true
+        required: true
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+      x-amples:
+        - title: Machine translate an HTML fragment using TestClient, adapt the links to target language wiki.
+          request:
+            params:
+              from: en
+              to: qqq
+            body:
+              html: <p><a rel="mw:WikiLink" href='./Oxygen' title='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a rel="mw:WikiLink" href='./Atomic number' title='Atomic number'>atomic number</a> 8.</p>
+          response:
+            status: 200
+            body:
+              contents: /.+/
+            headers:
+              content-type: application/json
+
+  /v2/translate/{from}/{to}/{provider}:
+    post:
+      tags:
+        - Machine translation
+      description: Translate the given content from source language to target language. Also adapt the content for the target language wiki. Some machine translation providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
+      parameters:
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+        - $ref: "#/components/parameters/mtprovider"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - html
+              properties:
+                html:
+                  type: string
+                  description: The HTML content to translate
+                  x-textarea: true
+        required: true
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+      x-amples:
+        - title: Machine translate an HTML fragment using TestClient, adapt the links to target language wiki.
+          request:
+            params:
+              from: en
+              to: qqq
+              provider: TestClient
+            body:
+              html: <p><a rel="mw:WikiLink" href='./Oxygen' title='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a rel="mw:WikiLink" href='./Atomic number' title='Atomic number'>atomic number</a> 8.</p>
+          response:
+            status: 200
+            body:
+              contents: /.+/
+            headers:
+              content-type: application/json
+
+  /v2/suggest/title/{title}/{from}/{to}:
+    get:
+      tags:
+        - Suggestions
+      description: Suggest a target title for the given source title and language pairs
+      parameters:
+        - $ref: "#/components/parameters/title"
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+      responses:
+        200:
+          description: Success
+        403:
+          description: Authentication error. The default MT provider for the given language pair needs authorization, and the given JWT is invalid.
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+      x-amples:
+        - title: Suggest a target title for the given source title and language pairs
+          description: The invalid JWT key is not used, as default MT provider doesn't need authentication
+          request:
+            headers:
+              authorization: Test-auth
+            params:
+              title: Limonero
+              from: es
+              to: ca
+          response:
+            status: 200
+            body:
+              sourceLanguage: es
+              targetLanguage: ca
+              sourceTitle: Limonero
+              targetTitle: llimoner
+            headers:
+              content-type: application/json
+        - title: Return an authentication error HTTP status code, when default MT requires authentication and the given JWT is invalid
+          description: The invalid JWT key is used, as default MT provider needs authentication
+          request:
+            headers:
+              authorization: Test-auth
+            params:
+              title: Lemon
+              from: en
+              to: el
+          response:
+            status: 403
+
+  /v2/suggest/source/{title}/{to}:
+    get:
+      tags:
+        - Suggestions
+      description: Suggest a source article to use for creating given article in given target language using translation
+      parameters:
+        - $ref: "#/components/parameters/title"
+        - $ref: "#/components/parameters/to"
+        - name: sourcelanguages
+          in: query
+          description: Comma-separated list of candidate source languages. By default English(en) is used as a source language unless that is the target language.
+          schema:
+            type: array
+            items:
+              type: string
+          style: form
+          explode: true
+          required: false
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+      x-amples:
+        - title: Suggest a source title to use for translation
+          request:
+            params:
+              to: ca
+              title: Paneer
+            query:
+              sourcelanguages: en
+          response:
+            status: 200
+            body:
+              suggestions: /^\[.+\]$/
+            headers:
+              content-type: application/json
+
+  /v2/suggest/sections/titles/{from}/{to}:
+    get:
+      tags:
+        - Suggestions
+      description: Suggest target section titles based on provided source section titles. Titles are provided as URL params under the key "titles"
+      parameters:
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+        - name: titles
+          in: query
+          description: List of source section titles separated by pipe ("|") delimiter, based on which target section suggestions will be given. Should be passed as array inside URL params (e.g. titles=test1|test2)
+          schema:
+            type: array
+            items:
+              type: string
+          required: true
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+      x-amples:
+        - title: Suggest target section titles for given source sections
+          request:
+            params:
+              from: en
+              to: es
+            query:
+              titles: References|Notes|External Links
+          response:
+            status: 200
+            body:
+              References: [ Referencias, Bibliografía ]
+              Notes: [ Referencias, Notas ]
+              External Links: [ Enlaces externos ]
+            headers:
+              content-type: application/json
+
+  /v2/suggest/sections/{title}/{from}/{to}:
+    get:
+      tags:
+        - Suggestions
+      description: Suggest sections to translate from a source article to its corresponding article in target language.
+      parameters:
+        - $ref: "#/components/parameters/title"
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+      x-amples:
+        - title: Suggest source sections to translate
+          request:
+            params:
+              from: en
+              to: ml
+              title: Sitar
+          response:
+            status: 200
+            body:
+              sections:
+                sourceLanguage: /.+/
+                targetLanguage: /.+/
+                sourceTitle: /.+/
+                targetTitle: /.+/
+                present: /.+/
+                missing: /.+/
+            headers:
+              content-type: application/json
+
+  # from routes/info.js
+  /_info:
+    get:
+      tags:
+        - Service information
+      description: Gets information about the service
+      responses:
+        200:
+          description: OK
+      x-amples:
+        - title: retrieve service info
+          request: {}
+          response:
+            status: 200
+            headers:
+              content-type: application/json
+            body:
+              name: /.+/
+              description: /.+/
+              version: /.+/
+              home: /.+/
+  /_info/name:
+    get:
+      tags:
+        - Service information
+        - Service name
+      description: Gets the name of the service
+      responses:
+        200:
+          description: OK
+      x-amples:
+        - title: retrieve service name
+          request: {}
+          response:
+            status: 200
+            headers:
+              content-type: application/json
+            body:
+              name: /.+/
+  /_info/version:
+    get:
+      tags:
+        - Service information
+        - Service version
+      description: Gets the running version of the service
+      responses:
+        200:
+          description: OK
+      x-amples:
+        - title: retrieve service version
+          request: {}
+          response:
+            status: 200
+            headers:
+              content-type: application/json
+            body:
+              version: /.+/
+  /_info/home:
+    get:
+      tags:
+        - Service information
+        - Service homepage
+      description: Redirects to the home page
+      responses:
+        301:
+          description: Redirect
+      x-amples:
+        - title: redirect to the home page
+          request: {}
+          response:
+            status: 301
+components:
+  schemas:
+    # A https://tools.ietf.org/html/draft-nottingham-http-problem
+    problem:
+      required:
+        - type
+      properties:
+        status:
+          type: integer
+        type:
+          type: string
+        title:
+          type: string
+        detail:
+          type: string
+        method:
+          type: string
+        uri:
+          type: string
+  parameters:
+    domain:
+      in: path
+      name: domain
+      required: true
+      schema:
+        type: string
+      description: |
+        Project domain for the requested data.
+    language:
+      in: path
+      name: language
+      required: true
+      schema:
+        type: string
+      description: |
+        Valid language code
+    revision:
+      in: path
+      name: revision
+      required: true
+      schema:
+        type: string
+      description: |
+        Revision Id
+    title:
+      in: path
+      name: title
+      required: true
+      schema:
+        type: string
+      description: |
+        Page title. Use underscores instead of spaces. Example: `Main_Page`
+    prop:
+      in: path
+      name: prop
+      required: true
+      schema:
+        type: string
+      description: |
+        Site info prop.
+    from:
+      name: from
+      in: path
+      description: The source language code
+      schema:
+        type: string
+      required: true
+    sourcelanguage:
+      name: sourcelanguage
+      in: path
+      description: The source language code
+      schema:
+        type: string
+      required: true
+    to:
+      name: to
+      in: path
+      description: The target language code
+      schema:
+        type: string
+      required: true
+    targetlanguage:
+      name: targetlanguage
+      in: path
+      description: The target language code
+      schema:
+        type: string
+      required: true
+    word:
+      name: word
+      in: path
+      description: The word to lookup
+      schema:
+        type: string
+      required: true
+    dictprovider:
+      name: provider
+      in: path
+      description: The dictionary provider id
+      required: true
+      schema:
+        type: string
+        enum:
+          - JsonDict
+          - Dictd
+          - null
+    mtprovider:
+      name: provider
+      in: path
+      description: The machine translation provider id
+      required: true
+      schema:
+        type: string
+        enum:
+          - Apertium
+          - null
+    tool:
+      name: tool
+      in: path
+      description: The tool name
+      schema:
+        type: string
+        enum:
+          - mt
+          - dictionary
+      required: true

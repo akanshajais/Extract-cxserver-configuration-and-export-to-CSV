@@ -1,0 +1,1171 @@
+[
+	{
+		"desc": "Link adaptation basic test",
+		"from": "en",
+		"to": "es",
+		"source": "<p><a rel='mw:WikiLink' href='Oxygen' id='mwAA'>Oxygen</a> is a chemical element with symbol O and <a rel='mw:WikiLink' href='Atomic number' id='mwAB'>atomic number</a> 8.</p>",
+		"resultAttributes": {
+			"mwAA": {
+				"href": "Oxígeno",
+				"title": "Oxígeno",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Oxígeno",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q629"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/O%2C8.jpg/80px-O%2C8.jpg",
+							"width": 80,
+							"height": 40
+						},
+						"description": "elemento químico"
+					},
+					"sourceTitle": {
+						"title": "Oxygen",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q629"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Liquid_oxygen_in_a_beaker_4.jpg/66px-Liquid_oxygen_in_a_beaker_4.jpg",
+							"width": 66,
+							"height": 80
+						},
+						"description": "Chemical element with atomic number 8"
+					}
+				}
+			},
+			"mwAB": {
+				"href": "Número atómico",
+				"title": "Número atómico",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Número atómico",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q23809"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Element_identity.png/80px-Element_identity.png",
+							"width": 80,
+							"height": 80
+						},
+						"description": "número total de protones que tiene el átomo"
+					},
+					"sourceTitle": {
+						"title": "Atomic number",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q23809"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Atomic_number_depiction.jpg/80px-Atomic_number_depiction.jpg",
+							"width": 80,
+							"height": 49
+						},
+						"description": "number of protons found in the nucleus of an atom"
+					}
+				}
+			}
+		}
+	},
+	{
+		"desc": "Link adaptation - Full paragraph and relative links",
+		"from": "en",
+		"to": "es",
+		"source": "<p id='mwBg'><b id='mwBw'>Oxygen</b> is a <a rel='mw:WikiLink' href='./Chemical_element' title='Chemical element' id='mwCA'>chemical element</a> with symbol<span typeof='mw:Entity' id='mwCQ'> </span><b id='mwCg'>O</b> and <a rel='mw:WikiLink' href='./Atomic_number' title='Atomic number' id='mwCw'>atomic number</a> 8. It is a member of the <a rel='mw:WikiLink' href='./Chalcogen' title='Chalcogen' id='mwDA'>chalcogen</a> <a rel='mw:WikiLink' href='./Group_(periodic_table)' title='Group (periodic table)' id='mwDQ'>group</a> on the <a rel='mw:WikiLink' href='./Periodic_table' title='Periodic table' id='mwDg'>periodic table</a> and is a highly <a rel='mw:WikiLink' href='./Chemical_reaction' title='Chemical reaction' id='mwDw'>reactive</a> <a rel='mw:WikiLink' href='./Nonmetal' title='Nonmetal' id='mwEA'>nonmetal</a> and <a rel='mw:WikiLink' href='./Oxidizing_agent' title='Oxidizing agent' id='mwEQ'>oxidizing agent</a> that readily forms <a rel='mw:WikiLink' href='./Oxide' title='Oxide' id='mwEg'>oxides</a> with most elements as well as other <a rel='mw:WikiLink' href='./Chemical_compound' title='Chemical compound' id='mwEw'>compounds</a>. By mass, oxygen is the third-<a rel='mw:WikiLink' href='./Abundance_of_the_chemical_elements' title='Abundance of the chemical elements' id='mwFA'>most abundant element</a> in the universe, after <a rel='mw:WikiLink' href='./Hydrogen' title='Hydrogen' id='mwFQ'>hydrogen</a> and <a rel='mw:WikiLink' href='./Helium' title='Helium' id='mwFg'>helium</a>. At <a rel='mw:WikiLink' href='./Standard_temperature_and_pressure' title='Standard temperature and pressure' id='mwFw' class='mw-redirect'>standard temperature and pressure</a>, two atoms of the element <a rel='mw:WikiLink' href='./Chemical_bond' title='Chemical bond' id='mwGA'>bind</a> to form <a rel='mw:WikiLink' href='./Allotropes_of_oxygen#Dioxygen' title='Allotropes of oxygen' id='mwGQ'>dioxygen</a>, a colorless and odorless <a rel='mw:WikiLink' href='./Diatomic_molecule' title='Diatomic molecule' id='mwGg'>diatomic</a> <a rel='mw:WikiLink' href='./Gas' title='Gas' id='mwGw'>gas</a> with the formula. This is an important part of the <a rel='mw:WikiLink' href='./Atmosphere_of_Earth' title='Atmosphere of Earth' id='mwHQ'>atmosphere</a> and diatomic oxygen gas constitutes 20.8% of the <a rel='mw:WikiLink' href=\"./Earth's_atmosphere\" title=\"Earth's atmosphere\" id='mwHg' class='mw-redirect'>Earth's atmosphere</a>. Additionally, as oxides the element makes up almost half of the <a rel='mw:WikiLink' href=\"./Earth's_crust\" title=\"Earth's crust\" id='mwHw' class='mw-redirect'>Earth's crust</a>.</p>",
+		"resultAttributes": {
+			"mwCA": {
+				"title": "Elemento químico",
+				"href": "Elemento químico",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Elemento químico",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q11344"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Periodic_table_large_2016-es.png/80px-Periodic_table_large_2016-es.png",
+							"width": 80,
+							"height": 44
+						},
+						"description": "tipo de materia constituida por átomos de la misma clase"
+					},
+					"sourceTitle": {
+						"title": "Chemical element",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q11344"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
+							"width": 80,
+							"height": 42
+						},
+						"description": "a species of atoms having the same number of protons in the atomic nucleus"
+					}
+				}
+			},
+			"mwCw": {
+				"href": "Número atómico",
+				"title": "Número atómico",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Número atómico",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q23809"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Element_identity.png/80px-Element_identity.png",
+							"width": 80,
+							"height": 80
+						},
+						"description": "número total de protones que tiene el átomo"
+					},
+					"sourceTitle": {
+						"title": "Atomic number",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q23809"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Atomic_number_depiction.jpg/80px-Atomic_number_depiction.jpg",
+							"width": 80,
+							"height": 49
+						},
+						"description": "number of protons found in the nucleus of an atom"
+					}
+				}
+			},
+			"mwDA": {
+				"href": "Anfígeno",
+				"title": "Anfígeno",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Anfígeno",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q104567"
+						}
+					},
+					"sourceTitle": {
+						"title": "Chalcogen",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q104567"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Sulfur-sample.jpg/80px-Sulfur-sample.jpg",
+							"width": 80,
+							"height": 60
+						},
+						"description": "group of chemical elements"
+					}
+				}
+			},
+			"mwDQ": {
+				"href": "grupo de la tabla periódica",
+				"title": "grupo de la tabla periódica",
+				"data-cx": {
+					"adapted": false,
+					"targetFrom": "label",
+					"sourceTitle": {
+						"title": "Group (periodic table)",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q83306"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
+							"width": 80,
+							"height": 42
+						},
+						"description": "column of elements in the periodic table of the chemical elements"
+					}
+				}
+			},
+			"mwDg": {
+				"href": "Tabla periódica de los elementos",
+				"title": "Tabla periódica de los elementos",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Tabla periódica de los elementos",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q10693"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Periodic_table_large-es-updated-2018.svg/80px-Periodic_table_large-es-updated-2018.svg.png",
+							"width": 80,
+							"height": 44
+						},
+						"description": "tabla que clasifica, organiza y distribuye los distintos elementos químicos, conforme a sus propiedades y características"
+					},
+					"sourceTitle": {
+						"title": "Periodic table",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q10693"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
+							"width": 80,
+							"height": 42
+						},
+						"description": "Tabular arrangement of the chemical elements ordered by atomic number"
+					}
+				}
+			},
+			"mwDw": {
+				"href": "Reacción química",
+				"title": "Reacción química",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Reacción química",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q36534"
+						},
+						"description": "Un máquina el que redactó el artículo"
+					},
+					"sourceTitle": {
+						"title": "Chemical reaction",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q36534"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/ThermiteReaction.jpg/72px-ThermiteReaction.jpg",
+							"width": 72,
+							"height": 80
+						},
+						"description": "Process that results in the interconversion of chemical species"
+					}
+				}
+			},
+			"mwEA": {
+				"href": "No metal",
+				"title": "No metal",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "No metal",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q19600"
+						},
+						"thumbnail": {
+							"height": 43,
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tabla_periodica.png/80px-Tabla_periodica.png",
+							"width": 80
+						},
+						"description": "categoría de elementos químicos opuestos a los metales"
+					},
+					"sourceTitle": {
+						"title": "Nonmetal",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q19600"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
+							"width": 80,
+							"height": 42
+						},
+						"description": "term to classify chemical elements"
+					}
+				}
+			},
+			"mwEQ": {
+				"href": "Oxidante",
+				"title": "Oxidante",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Oxidante",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q187689"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Hazard_O.svg/80px-Hazard_O.svg.png",
+							"width": 80,
+							"height": 80
+						},
+						"description": "compuesto químico que oxida a otra sustancia"
+					},
+					"sourceTitle": {
+						"title": "Oxidizing agent",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q187689"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/GHS-pictogram-rondflam.svg/80px-GHS-pictogram-rondflam.svg.png",
+							"width": 80,
+							"height": 80
+						},
+						"description": "Chemical compound used to oxidize another substance in a chemical reaction"
+					}
+				}
+			},
+			"mwEg": {
+				"title": "Óxido",
+				"href": "Óxido",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Óxido",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q50690"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Oxid_door.jpg/80px-Oxid_door.jpg",
+							"width": 80,
+							"height": 60
+						},
+						"description": "compuesto binario que contiene uno o varios átomos de oxígeno y otros elementos"
+					},
+					"sourceTitle": {
+						"title": "Oxide",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q50690"
+						},
+						"thumbnail": {
+							"height": 57,
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Rutile-unit-cell-3D-balls.png/80px-Rutile-unit-cell-3D-balls.png",
+							"width": 80
+						},
+						"description": "chemical compound with at least one oxygen atom"
+					}
+				}
+			},
+			"mwEw": {
+				"href": "Compuesto químico",
+				"title": "Compuesto químico",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Compuesto químico",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q11173"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/LightningVolt_Deep_Blue_Sea.jpg/64px-LightningVolt_Deep_Blue_Sea.jpg",
+							"width": 64,
+							"height": 80
+						},
+						"description": "sustancia química formada por la unión de dos o más elementos de la tabla periódica"
+					},
+					"sourceTitle": {
+						"title": "Chemical compound",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q11173"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/2006-02-13_Drop-impact.jpg/80px-2006-02-13_Drop-impact.jpg",
+							"width": 80,
+							"height": 77
+						},
+						"description": "Substance composed of multiple elements"
+					}
+				}
+			},
+			"mwFA": {
+				"href": "Abundancia de los elementos químicos",
+				"title": "Abundancia de los elementos químicos",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Abundancia de los elementos químicos",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q428867"
+						}
+					},
+					"sourceTitle": {
+						"title": "Abundance of the chemical elements",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q428867"
+						},
+						"description": "Abundance at scales including the Universe, the Earth and the human body"
+					}
+				}
+			},
+			"mwFQ": {
+				"href": "Hidrógeno",
+				"title": "Hidrógeno",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Hidrógeno",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q556"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/H%2C1.jpg/80px-H%2C1.jpg",
+							"width": 80,
+							"height": 44
+						},
+						"description": "elemento químico con número atómico 1"
+					},
+					"sourceTitle": {
+						"title": "Hydrogen",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q556"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Hexagonal.svg/78px-Hexagonal.svg.png",
+							"width": 78,
+							"height": 80
+						},
+						"description": "Chemical element with atomic number 1"
+					}
+				}
+			},
+			"mwFg": {
+				"href": "Helio",
+				"title": "Helio",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Helio",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q560"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/He%2C2.jpg/80px-He%2C2.jpg",
+							"width": 80,
+							"height": 40
+						},
+						"description": "elemento químicosmo"
+					},
+					"sourceTitle": {
+						"title": "Helium",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q560"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Helium_discharge_tube.jpg/80px-Helium_discharge_tube.jpg",
+							"width": 80,
+							"height": 53
+						},
+						"description": "Chemical element with atomic number 2"
+					}
+				}
+			},
+			"mwFw": {
+				"href": "Condiciones normalizadas de presión y temperatura",
+				"title": "Condiciones normalizadas de presión y temperatura",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Condiciones normalizadas de presión y temperatura",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q102145"
+						},
+						"description": "valores de presión atmosférica y temperatura que imperan en un laboratorio"
+					},
+					"sourceTitle": {
+						"title": "Standard conditions for temperature and pressure",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q102145"
+						},
+						"description": "Abbreviation is 'STP' or 'NTP'"
+					}
+				}
+			},
+			"mwGA": {
+				"href": "Enlace químico",
+				"title": "Enlace químico",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Enlace químico",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q44424"
+						},
+						"description": "proceso químico responsable de las interacciones atractivas entre átomos y moléculas"
+					},
+					"sourceTitle": {
+						"title": "Chemical bond",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q44424"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Electron_dot.svg/80px-Electron_dot.svg.png",
+							"width": 80,
+							"height": 65
+						},
+						"description": "lasting attraction between atoms that enables the formation of chemical compounds"
+					}
+				}
+			},
+			"mwGQ": {
+				"href": "Alótropos del oxígeno",
+				"title": "Alótropos del oxígeno",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Alótropos del oxígeno",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q428653"
+						}
+					},
+					"sourceTitle": {
+						"title": "Allotropes of oxygen",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q428653"
+						},
+						"description": "different chemical forms of oxygen"
+					}
+				}
+			},
+			"mwGg": {
+				"href": "Molécula diatómica",
+				"title": "Molécula diatómica",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Molécula diatómica",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q1751859"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Nitrogeno_-Molecular-.jpg/80px-Nitrogeno_-Molecular-.jpg",
+							"width": 80,
+							"height": 76
+						}
+					},
+					"sourceTitle": {
+						"title": "Diatomic molecule",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q1751859"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Dinitrogen-3D-vdW.png/80px-Dinitrogen-3D-vdW.png",
+							"width": 80,
+							"height": 61
+						},
+						"description": "molecule composed of only two atoms of the same or different chemical elements"
+					}
+				}
+			},
+			"mwGw": {
+				"href": "Gas",
+				"title": "Gas",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Gas",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q11432"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Translational_motion.gif/80px-Translational_motion.gif",
+							"width": 80,
+							"height": 70
+						},
+						"description": "Estado de la materia más conocido como gaseoso"
+					},
+					"sourceTitle": {
+						"title": "Gas",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q11432"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Gas_particle_movement.svg/80px-Gas_particle_movement.svg.png",
+							"width": 80,
+							"height": 57
+						},
+						"description": "One of the four fundamental states of matter"
+					}
+				}
+			},
+			"mwHQ": {
+				"href": "Atmósfera terrestre",
+				"title": "Atmósfera terrestre",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Atmósfera terrestre",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q3230"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Full_moon_partially_obscured_by_atmosphere.jpg/80px-Full_moon_partially_obscured_by_atmosphere.jpg",
+							"width": 80,
+							"height": 53
+						},
+						"description": "parte gaseosa de la Tierra"
+					},
+					"sourceTitle": {
+						"title": "Atmosphere of Earth",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q3230"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Top_of_Atmosphere.jpg/80px-Top_of_Atmosphere.jpg",
+							"width": 80,
+							"height": 53
+						},
+						"description": "Layer of gases surrounding the planet Earth"
+					}
+				}
+			},
+			"mwHg": {
+				"href": "Atmósfera terrestre",
+				"title": "Atmósfera terrestre",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Atmósfera terrestre",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q3230"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Full_moon_partially_obscured_by_atmosphere.jpg/80px-Full_moon_partially_obscured_by_atmosphere.jpg",
+							"width": 80,
+							"height": 53
+						},
+						"description": "parte gaseosa de la Tierra"
+					},
+					"sourceTitle": {
+						"title": "Atmosphere of Earth",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q3230"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Top_of_Atmosphere.jpg/80px-Top_of_Atmosphere.jpg",
+							"width": 80,
+							"height": 53
+						},
+						"description": "Layer of gases surrounding the planet Earth"
+					}
+				}
+			},
+			"mwHw": {
+				"href": "Corteza (geología)",
+				"title": "Corteza (geología)",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Corteza (geología)",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q4232578"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Earth_poster.svg/80px-Earth_poster.svg.png",
+							"width": 80,
+							"height": 49
+						},
+						"description": "parte sólida externa de un cuerpo celeste"
+					},
+					"sourceTitle": {
+						"title": "Crust (geology)",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q4232578"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Earth_poster.svg/80px-Earth_poster.svg.png",
+							"width": 80,
+							"height": 49
+						},
+						"description": "The outermost solid shell of a rocky planet, dwarf planet, or natural satellite"
+					}
+				}
+			}
+		}
+	},
+	{
+		"desc": "Image adaptation basic test",
+		"from": "en",
+		"to": "ru",
+		"source": "<figure class='mw-default-size mw-halign-left' typeof='mw:File/Thumb' id='mwUQ'><a href='./File:Philos_experiment_of_the_burning_candle.PNG' id='mwUg'><img alt='Drawing of a burning candle enclosed in a glass bulb.' resource='./File:Philos_experiment_of_the_burning_candle.PNG' src='//upload.wikimedia.org/wikipedia/commons/e/e6/Philos_experiment_of_the_burning_candle.PNG' data-file-width='125' data-file-height='248' data-file-type='bitmap' height='248' width='125' id='mwUw'/></a><figcaption id='mwVA'><a rel='mw:WikiLink' href='./Philo_of_Byzantium' title='Philo of Byzantium' id='mwVQ'>Philo's</a> experiment inspired later <a rel='mw:WikiLink' href='./Detective' title='Detective' id='mwVg'>investigators</a>.</figcaption></figure>",
+		"resultAttributes": {
+			"mwUg": {
+				"href": "./Файл:Philos_experiment_of_the_burning_candle.PNG"
+			},
+			"mwUw": {
+				"resource": "./Файл:Philos_experiment_of_the_burning_candle.PNG"
+			},
+			"mwVQ": {
+				"href": "Филон Византийский",
+				"title": "Филон Византийский",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Филон Византийский",
+						"pagelanguage": "ru",
+						"pageprops": {
+							"wikibase_item": "Q334570"
+						}
+					},
+					"sourceTitle": {
+						"title": "Philo of Byzantium",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q334570"
+						},
+						"description": "Ancient Greek engineer"
+					}
+				}
+			},
+			"mwVg": {
+				"href": "Детектив (профессия)",
+				"title": "Детектив (профессия)",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Детектив (профессия)",
+						"pagelanguage": "ru",
+						"pageprops": {
+							"wikibase_item": "Q842782"
+						},
+						"description": "человек, расследующий преступления",
+						"thumbnail": {
+							"height": 80,
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Rippl_The_Detective.jpg/63px-Rippl_The_Detective.jpg",
+							"width": 63
+						}
+					},
+					"sourceTitle": {
+						"title": "Detective",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q842782"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Allan_Pinkerton-retouch.jpg/69px-Allan_Pinkerton-retouch.jpg",
+							"width": 69,
+							"height": 80
+						},
+						"description": "investigator, either a member of a police agency or a private person"
+					}
+				}
+			}
+		}
+	},
+	{
+		"desc": "Image adaptation - Inline image with span tag",
+		"from": "en",
+		"to": "ru",
+		"source": "<p><span class='mw-default-size mw-halign-left' typeof='mw:Image/Frameless' data-mw='{\"caption\":\"Some caption\"}' id='mwUQ'><a href='./File:Philos_experiment_of_the_burning_candle.PNG' id='mwUg'><img alt='Drawing of a burning candle enclosed in a glass bulb.' resource='./File:Philos_experiment_of_the_burning_candle.PNG' src='//upload.wikimedia.org/wikipedia/commons/e/e6/Philos_experiment_of_the_burning_candle.PNG' data-file-width='125' data-file-height='248' data-file-type='bitmap' height='248' width='125' id='mwUw'/></a></span></p>",
+		"resultAttributes": {
+			"mwUQ": {
+				"data-mw": {
+					"caption": "[en→ru]Some caption"
+				},
+				"data-cx": {
+					"adapted": true
+				}
+			}
+		}
+	},
+	{
+		"desc": "Image adaptation - Inline image with span tag",
+		"from": "en",
+		"to": "ru",
+		"source": "<p><span class='mw-default-size mw-halign-left' typeof='mw:Image/Frameless' data-mw='{\"caption\":\"Some caption\"}' id='mwUQ'><a href='./File:Philos_experiment_of_the_burning_candle.PNG' id='mwUg'><img alt='Drawing of a burning candle enclosed in a glass bulb.' resource='./File:Philos_experiment_of_the_burning_candle.PNG' src='//upload.wikimedia.org/wikipedia/commons/e/e6/Philos_experiment_of_the_burning_candle.PNG' data-file-width='125' data-file-height='248' data-file-type='bitmap' height='248' width='125' id='mwUw'/></a></span></p>",
+		"resultAttributes": {
+			"mwUQ": {
+				"data-mw": {
+					"caption": "[en→ru]Some caption"
+				},
+				"data-cx": {
+					"adapted": true
+				}
+			}
+		}
+	},
+	{
+		"desc": "Image adaptation - Source and target language directions differs",
+		"from": "en",
+		"to": "he",
+		"source": "<figure class='mw-default-size mw-halign-left' typeof='mw:File/Thumb' id='mwUQ'><a href='./File:Philos_experiment_of_the_burning_candle.PNG' id='mwUg'><img alt='Drawing of a burning candle enclosed in a glass bulb.' resource='./File:Philos_experiment_of_the_burning_candle.PNG' src='//upload.wikimedia.org/wikipedia/commons/e/e6/Philos_experiment_of_the_burning_candle.PNG' data-file-width='125' data-file-height='248' data-file-type='bitmap' height='248' width='125' id='mwUw'/></a><figcaption id='mwVA'><a rel='mw:WikiLink' href='./Philo_of_Byzantium' title='Philo of Byzantium' id='mwVQ'>Philo's</a> experiment inspired later <a rel='mw:WikiLink' href='./Detective' title='Detective' id='mwVg'>investigators</a>.</figcaption></figure>",
+		"resultAttributes": {
+			"mwUg": {
+				"href": "./קובץ:Philos_experiment_of_the_burning_candle.PNG"
+			},
+			"mwUw": {
+				"resource": "./קובץ:Philos_experiment_of_the_burning_candle.PNG"
+			},
+			"mwUQ": {
+				"class": "mw-default-size mw-halign-right"
+			},
+			"mwVQ": {
+				"data-cx": {
+					"adapted": false,
+					"targetFrom": "label",
+					"sourceTitle": {
+						"title": "Philo of Byzantium",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q334570"
+						},
+						"description": "Ancient Greek engineer"
+					}
+				}
+			},
+			"mwVg": {
+				"data-cx": {
+					"adapted": false,
+					"targetFrom": "label",
+					"sourceTitle": {
+						"title": "Detective",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q842782"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Allan_Pinkerton-retouch.jpg/69px-Allan_Pinkerton-retouch.jpg",
+							"width": 69,
+							"height": 80
+						},
+						"description": "investigator, either a member of a police agency or a private person"
+					}
+				}
+			}
+		}
+	},
+	{
+		"desc": "Image adaptation - Image is not in commons",
+		"from": "en",
+		"to": "ml",
+		"source": "<figure class='mw-default-size mw-halign-left' typeof='mw:File/Frame' id='mwUQ'><a href='./File:Philos_experiment_of_the_burning_candle.PNG' id='mwUg'><img alt='Drawing of a burning candle enclosed in a glass bulb.' resource='./File:Philos_experiment_of_the_burning_candle.PNG' src='//upload.wikimedia.org/wikipedia/mediawiki/e/e6/Philos_experiment_of_the_burning_candle.PNG' data-file-width='125' data-file-height='248' data-file-type='bitmap' height='248' width='125' id='mwUw'/></a><figcaption id='mwVA'><a rel='mw:WikiLink' href='./Philo_of_Byzantium' title='Philo of Byzantium' id='mwVQ'>Philo's</a> experiment inspired later <a rel='mw:WikiLink' href='./Detective' title='Detective' id='mwVg'>investigators</a>.</figcaption></figure>",
+		"resultAttributes": {
+			"mwUQ": {
+				"data-cx": {
+					"adapted": false
+				}
+			},
+			"mwVQ": {
+				"data-cx": {
+					"adapted": false,
+					"targetFrom": "mt",
+					"sourceTitle": {
+						"title": "Philo of Byzantium",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q334570"
+						},
+						"description": "Ancient Greek engineer"
+					}
+				}
+			},
+			"mwVg": {
+				"data-cx": {
+					"adapted": false,
+					"targetFrom": "mt",
+					"sourceTitle": {
+						"title": "Detective",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q842782"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Allan_Pinkerton-retouch.jpg/69px-Allan_Pinkerton-retouch.jpg",
+							"width": 69,
+							"height": 80
+						},
+						"description": "investigator, either a member of a police agency or a private person"
+					}
+				}
+			}
+		}
+	},
+	{
+		"desc": "Gallery adaptation",
+		"from": "en",
+		"to": "es",
+		"source": "<ul class='gallery mw-gallery-packed' typeof='mw:Extension/gallery' about='#mwt2' data-mw='{\"name\":\"gallery\",\"attrs\":{\"mode\":\"packed\"},\"body\":{\"extsrc\":\"\\r\\nFile:Nilgiri Tahr 1.jpg|[[Nilgiri tahr]]\\r\\nFile:Malabar Giant Squirrel77.jpg|[[Malabar Giant Squirrel]], [[Silent Valley National Park]]\\r\\nFile:Periyar Thekkady.jpg|Elephants at Thekkady\\r\\nFile:Rhacophorus malabaricus.jpg|[[Rhacophorus malabaricus]]\\r\\nFile:Brahminy kite2.jpg|[[Brahminy kite]]\\r\\nFile:Goldenbacked woodpecker.jpg|[[Dinopium benghalense|Lesser golden-backed woodpecker]] water\\r\\n\"}}' id='mwAQ'></ul>",
+		"resultAttributes": {
+			"mwAQ": {
+				"data-mw": {
+					"name": "gallery",
+					"attrs": {
+						"mode": "packed"
+					},
+					"body": {
+						"extsrc": "\nArchivo:Nilgiri Tahr 1.jpg|[[Nilgiri tahr|[en→es]Nilgiri tahr]]\nArchivo:Malabar Giant Squirrel77.jpg|[en→es]Malabar Giant Squirrel, [[Silent Valley National Park]]\nArchivo:Periyar Thekkady.jpg|[en→es]Elephants at Thekkady\nArchivo:Rhacophorus malabaricus.jpg|[[Rhacophorus malabaricus|[en→es]Rhacophorus malabaricus]]\nArchivo:Brahminy kite2.jpg|[[Brahminy kite|[en→es]Brahminy kite]]\nArchivo:Goldenbacked woodpecker.jpg|[en→es]Lesser golden-backed woodpecker water\n"
+					}
+				}
+			}
+		}
+	},
+	{
+		"desc": "Reference adaptation test without a reference template",
+		"from": "en",
+		"to": "es",
+		"source": "<p><span id='cite_ref-5' rel='dc:references' typeof='mw:Extension/ref' data-mw='{&quot;name&quot;:&quot;ref&quot;,&quot;body&quot;:{&quot;html&quot;:&quot;Hello reference.&quot;}}' class='mw-ref'><a style='counter-reset: mw-Ref 1;'><span class='mw-reflink-text'>[1]</span></a></span></p>",
+		"resultAttributes": {
+			"cite_ref-5": {
+				"data-mw": {
+					"name": "ref",
+					"body": {
+						"html": "Hello reference."
+					}
+				},
+				"data-cx": {
+					"adapted": true,
+					"partial": false
+				}
+			}
+		}
+	},
+	{
+		"desc": "Reference adaptation test where the content is reference and template at same time",
+		"from": "es",
+		"to": "en",
+		"source": "<p id='mwDA'>Text<sup about='#mwt3' class='mw-ref' data-mw='{&quot;parts&quot;:[{&quot;template&quot;:{&quot;target&quot;:{&quot;wt&quot;:&quot;Harvnp&quot;,&quot;href&quot;:&quot;./Plantilla:Harvnp&quot;},&quot;params&quot;:{&quot;1&quot;:{&quot;wt&quot;:&quot;Termes&quot;},&quot;2&quot;:{&quot;wt&quot;:&quot;2011&quot;},&quot;p&quot;:{&quot;wt&quot;:&quot;91&quot;}},&quot;i&quot;:0}}]}' id='cite_ref-FOOTNOTETermes201191_2-0' rel='dc:references' typeof='mw:Transclusion  mw:Extension/ref' data-ve-no-generated-contents='true'><a href='./La_Mano_Negra#cite_note-FOOTNOTETermes201191-2' style='counter-reset: mw-Ref 2;'><span class='mw-reflink-text'>[2]</span></a></sup></p>",
+		"resultAttributes": {
+			"cite_ref-FOOTNOTETermes201191_2-0": {
+				"data-mw": {
+					"parts": [ {
+						"template": {
+							"i": 0,
+							"params": {
+								"1": {
+									"wt": "Termes"
+								},
+								"2": { "wt": "2011" },
+								"p": { "wt": "91" }
+							},
+							"target": {
+								"href": "./Template:Sfn",
+								"wt": "Sfn"
+							} }
+					}
+					]
+				},
+				"data-cx": [ {
+					"adapted": true,
+					"partial": false,
+					"targetExists": true,
+					"mandatoryTargetParams": [
+						"1",
+						"2"
+					],
+					"optionalTargetParams": [
+						"3",
+						"4",
+						"5",
+						"p",
+						"pp",
+						"ps",
+						"loc"
+					]
+				} ]
+			}
+		}
+	},
+	{
+		"desc": "Reference adaptation test where source and target has no template data. Must use template mapping database",
+		"from": "es",
+		"to": "ca",
+		"source": "<p id=\"mwAQ\"><span id=\"CITAREFNaciones_Unidas2015\" class=\"citation conferencia\" about=\"#mwt1\" typeof=\"mw:Transclusion\" data-mw='{\"parts\":[{\"template\":{\"target\":{\"wt\":\"Cita conferencia \",\"href\":\"./Plantilla:Cita_conferencia\"},\"params\":{\"autor\":{\"wt\":\"Naciones Unidas\"},\"enlaceautor\":{\"wt\":\"Naciones Unidas\"},\"fecha\":{\"wt\":\"18 de marzo de 2015\"},\"año\":{\"wt\":\"2015\"},\"mes\":{\"wt\":\"marzo\"},\"título\":{\"wt\":\"Tercera Conferencia Mundial de las Naciones Unidas sobre la Reducción del Riesgo de Desastres (Manual de la Conferencia)\"},\"conferencia\":{\"wt\":\"Tercera Conferencia Mundial de las Naciones Unidas\"},\"editor\":{\"wt\":\"WCDRR\"},\"ubicación\":{\"wt\":\"Sendai, Japón\"},\"páginas\":{\"wt\":\"21\"},\"url\":{\"wt\":\"http://www.wcdrr.org/uploads/UN-WCDRR-CH-Es.pdf\"},\"formato\":{\"wt\":\"PDF\"},\"fechaacceso\":{\"wt\":\"8 de mayo de 2015\"}},\"i\":0}}]}'><a rel=\"mw:WikiLink\" href=\"./Naciones_Unidas\" title=\"Naciones Unidas\" class=\"mw-redirect\">Naciones Unidas</a> (18 de marzo de 2015).  WCDRR, ed. <a rel=\"mw:ExtLink\" href=\"http://www.wcdrr.org/uploads/UN-WCDRR-CH-Es.pdf\" class=\"external text\"><i>Tercera Conferencia Mundial de las Naciones Unidas sobre la Reducción del Riesgo de Desastres (Manual de la Conferencia)</i></a> <span style=\"color:#555;\">(PDF)</span>. Tercera Conferencia Mundial de las Naciones Unidas. Sendai, Japón. p.<span typeof=\"mw:Entity\"> </span>21<span class=\"reference-accessdate\">. Consultado el 8 de mayo de 2015</span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AMain+Page&amp;rft.au=Naciones+Unidas&amp;rft.aulast=Naciones+Unidas&amp;rft.btitle=Tercera+Conferencia+Mundial+de+las+Naciones+Unidas+sobre+la+Reducci%C3%B3n+del+Riesgo+de+Desastres+%28Manual+de+la+Conferencia%29&amp;rft.date=18+de+marzo+de+2015&amp;rft.genre=book&amp;rft.pages=21&amp;rft.place=Sendai%2C+Jap%C3%B3n&amp;rft_id=http%3A%2F%2Fwww.wcdrr.org%2Fuploads%2FUN-WCDRR-CH-Es.pdf&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\" about=\"#mwt1\"><span style=\"display:none;\"><span typeof=\"mw:Entity\"> </span></span></span><span about=\"#mwt1\"> </span><span style=\"display:none;font-size:100%\" class=\"error citation-comment\" about=\"#mwt1\">La referencia utiliza el parámetro obsoleto <code><span typeof=\"mw:Entity\">|</span>mes=</code> (<a rel=\"mw:WikiLink\" href=\"./Ayuda:Errores_en_las_referencias#deprecated_params\" title=\"Ayuda:Errores en las referencias\">ayuda</a>)</span><link rel=\"mw:PageProp/Category\" href=\"./Categoría:Wikipedia:Páginas_con_referencias_con_parámetros_obsoletos\" about=\"#mwt1\" id=\"mwAg\"/></p> ",
+		"resultAttributes": {
+			"CITAREFNaciones_Unidas2015": {
+				"data-mw": {
+					"parts": [ {
+						"template": {
+							"i": 0,
+							"params": {
+								"any": {
+									"wt": "2015"
+								},
+								"autor": {
+									"wt": "Naciones Unidas"
+								},
+								"conferència": {
+									"wt": "Tercera Conferencia Mundial de las Naciones Unidas"
+								},
+								"data": {
+									"wt": "18 de marzo de 2015"
+								},
+								"editor": {
+									"wt": "WCDRR"
+								},
+								"mes": {
+									"wt": "marzo"
+								},
+								"títol": {
+									"wt": "Tercera Conferencia Mundial de las Naciones Unidas sobre la Reducción del Riesgo de Desastres (Manual de la Conferencia)"
+								},
+								"url": {
+									"wt": "http://www.wcdrr.org/uploads/UN-WCDRR-CH-Es.pdf"
+								}
+							},
+							"target": {
+								"href": "./Plantilla:Citar conferència",
+								"wt": "Citar conferència"
+							} }
+					}
+					]
+				},
+				"data-cx": [ {
+					"adapted": true,
+					"partial": false,
+					"targetExists": true,
+					"mandatoryTargetParams": [],
+					"optionalTargetParams": []
+				} ]
+			}
+		}
+	},
+	{
+		"desc": "Style tags holding template definition should not be ignored and used for template adaptation",
+		"from": "en",
+		"to": "ca",
+		"source": "<section data-mw-section-id=\"0\" id=\"mwAQ\"><style data-mw-deduplicate=\"TemplateStyles:r960796168\" typeof=\"mw:Extension/templatestyles mw:Transclusion\" about=\"#mwt1\" data-mw='{\"parts\":[{\"template\":{\"target\":{\"wt\":\"Quote\",\"href\":\"./Template:Quote\"},\"params\":{\"1\":{\"wt\":\"To be or not to be\"},\"2\":{\"wt\":\"William Shakespeare\"},\"3\":{\"wt\":\"Hamlet\"}},\"i\":0}}]}' id=\"mwAg\">.mw-parser-output .templatequote{ overflow:hidden; margin:1em 0; padding:0 40px } </style> <blockquote class=\"templatequote\" about=\"#mwt1\" id=\"mwAw\"><p>To be or not to be</p><div class=\"templatequotecite\">—<span typeof=\"mw:Entity\"> </span><cite>William Shakespeare, Hamlet</cite></div></blockquote></section>",
+		"resultAttributes": {
+			"mwAg": {
+				"data-mw": {
+					"parts": [ {
+						"template": {
+							"i": 0,
+							"params": {
+								"1": {
+									"wt": "To be or not to be"
+								},
+								"2": {
+									"wt": "William Shakespeare"
+								},
+								"3": {
+									"wt": "Hamlet"
+								}
+							},
+							"target": {
+								"href": "./Plantilla:Citació",
+								"wt": "Citació"
+							} }
+					}
+					]
+				},
+				"data-cx": [ {
+					"adapted": true,
+					"partial": false,
+					"targetExists": true,
+					"mandatoryTargetParams": [],
+					"optionalTargetParams": []
+				} ]
+			}
+		}
+	},
+	{
+		"desc": "Audio adaptation",
+		"from": "en",
+		"to": "es",
+		"source": "<figure class=\"mw-default-size mw-default-audio-height\" typeof=\"mw:File\"><span><audio id='mwUQ' controls=\"\" preload=\"none\"   height=\"20\"  width=\"220\" resource=\"./File:Continuity_proof.ogg\"> <source src=\"https://upload.wikimedia.org/wikipedia/commons/4/4d/Continuity_proof.ogg\"/                     type='audio/ogg; codecs=\"vorbis\"' data-title=\"Original Ogg file (25 kbps)\"  data-shorttitle=\"Ogg source\"/></audio>       </span>    </figure>",
+		"resultAttributes": {
+			"mwUQ": {
+				"resource": "./Archivo:Continuity_proof.ogg",
+				"data-cx": {
+					"adapted": true
+				}
+			}
+		}
+	},
+	{
+		"desc": "Audio adaptation when audio is not in Commons",
+		"from": "en",
+		"to": "es",
+		"source": "<figure class=\"mw-default-size mw-default-audio-height\" typeof=\"mw:File\"><span><audio id='mwUQ' controls=\"\" preload=\"none\"   height=\"20\"  width=\"220\" resource=\"./File:Continuity_proof.ogg\"> <source src=\"https://upload.wikimedia.org/wikipedia/mediawiki/4/4d/Continuity_proof.ogg\"/                     type='audio/ogg; codecs=\"vorbis\"' data-title=\"Original Ogg file (25 kbps)\"  data-shorttitle=\"Ogg source\"/></audio>       </span>    </figure>",
+		"resultAttributes": {
+			"mwUQ": {
+				"resource": "./File:Continuity_proof.ogg",
+				"data-cx": {
+					"adapted": false
+				}
+			}
+		}
+	},
+	{
+		"desc": "Video adaptation",
+		"from": "en",
+		"to": "es",
+		"source": "<figure class='mw-default-size' typeof='mw:Video/Thumb' id='mwAQ'><span id='mwAg'><video poster='//upload.wikimedia.org/wikipedia/commons/thumb/0/0b/ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm/220px--ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm.jpg' controls='' preload='none' height='124' width='220' resource='./File:ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm' id='mwAw'> <source src='//upload.wikimedia.org/wikipedia/commons/0/0b/ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm' type='video/webm; codecs='vp9, opus'' data-file-width='1920' data-file-height='1080'   data-title='Original WebM file, 1,920 × 1,080 (2.1 Mbps)' data-shorttitle='WebM source' id='mwBA' />  </video> </span><figcaption id='mwEw'>Fresh fruits and vegetables are grown in the ISS.</figcaption>  </figure>",
+		"resultAttributes": {
+			"mwAw": {
+				"resource": "./Archivo:ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm",
+				"data-cx": {
+					"adapted": true
+				}
+			}
+		}
+	},
+	{
+		"desc": "Inline Video adaptation",
+		"from": "en",
+		"to": "es",
+		"source": "<p><span class='mw-default-size' typeof='mw:File/Thumb' id='mwAQ'><span><video poster='//upload.wikimedia.org/wikipedia/commons/thumb/0/0b/ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm/220px--ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm.jpg' controls='' preload='none' height='124' width='220' resource='./File:ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm' id='mwAw'> <source src='//upload.wikimedia.org/wikipedia/commons/0/0b/ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm' type='video/webm; codecs='vp9, opus'' data-file-width='1920' data-file-height='1080'   data-title='Original WebM file, 1,920 × 1,080 (2.1 Mbps)' data-shorttitle='WebM source' id='mwBA' />  </video> </span></span><p>",
+		"resultAttributes": {
+			"mwAw": {
+				"resource": "./Archivo:ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm",
+				"data-cx": {
+					"adapted": true
+				}
+			}
+		}
+	}
+]

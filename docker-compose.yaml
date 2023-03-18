@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  cxserver:
+    build:
+      context: ./
+    volumes:
+      # map local to remote folder, exclude node_modules
+      - .:/opt/cxserver
+      - /opt/cxserver/node_modules
+    ports:
+      - 4000:8080
+      - 9229:9229 # Debug port
+      - 9090:9090 # Prometheus port
+    command: npm run dev
