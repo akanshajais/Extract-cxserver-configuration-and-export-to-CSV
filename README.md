@@ -1,5 +1,5 @@
 # Extract-cxserver-configuration-and-export-to-CSV
-**This is my contribution For the microtask T331201: Extract cxserver configuration and export to CSV, The code in outreachy_contribution.py loads each YAML file in the config directory, extracts the source language and target languages, and loops through each target language to extract the translation engine and preferred status (if available). It then adds each language pair to a list of language pairs.Finally, the list of language pairs is converted to a pandas DataFrame and exported as a CSV file. The resulting CSV file will have the four columns specified in the code.**
+**This is my contribution For the microtask T331201: Extract cxserver configuration and export to CSV, The code in outreachy_contribution.py read all the .yaml files in the config directory of the cxserver repository, except for the files listed in the question. For each file, it reads the YAML data, extracts the supported language pairs, and appends them to the supported_pairs list and then stored it in csv file .The resulting CSV file will have the four columns specified in the code.**
 
 **FLOW OF EXECUTION I FOLLOWED**
 - The code defines an empty list supported_pairs to store the extracted language pairs.
